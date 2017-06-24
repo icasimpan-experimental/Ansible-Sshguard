@@ -1,0 +1,12 @@
+---
+
+- name: Ansible-Sshguard | Install sshguard package
+  apt: name={{ item }} state=latest cache_valid_time=3600 update_cache=yes
+  with_items:
+    - sshguard
+
+- name: Ansible-Sshguard | Copy Sshguard whitelist config
+  template:
+    src: "whitelist.j2"
+    dest: "/etc/sshguard/whitelist"
+  notify: restart sshguard

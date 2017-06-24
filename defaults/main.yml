@@ -1,0 +1,11 @@
+---
+sshguard:
+
+  # main config 
+  daemon: sshguard
+  
+  # Whitelist IPs
+  ips:
+    - 192.168.10.10
+    - 192.168.10.11
+    - 192.168.10.12
